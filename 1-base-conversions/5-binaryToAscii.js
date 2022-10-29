@@ -9,23 +9,35 @@ const binaryStringToArray = str => {
   let count = 0;
 
   for (let i = 0; i < str.length; i++) {
-    binary8bitStr += str[i];
-    count++;
+	binary8bitStr += str[i];
+	count++;
 
-    if (count % 8 === 0) {
-      if (!str[i + 1]) break;
-      binary8bitStr += ',';
-    }
+	if (count % 8 === 0) {
+	  if (!str[i + 1]) break;
+	  binary8bitStr += ',';
+	}
   }
 
-  return binary8bitStr.split(',');
+  return binary8bitStr.split(','); // [ '01100001', '01100010', '01100011' ]
 };
 
 const binaryToAscii = str => {
-  // Your code here
+
+	let result = '';
+	let array = binaryStringToArray(str);
+	for (let element of array) {
+		let decimal = parseInt(element, 2);
+		// console.log(decimal)
+		let letter = String.fromCharCode(decimal);
+		// console.log(letter) // abc
+		result += letter;
+	}
+	return result;
 };
 
 /******************************************************************************/
+
+// console.log(binaryStringToArray('011000010110001001100011'))
 
 console.log(binaryToAscii('011000010110001001100011'));
 // 'abc'

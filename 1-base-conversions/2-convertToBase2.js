@@ -2,8 +2,15 @@
 
 /******************************************************************************/
 
+// Conver to base2(binary)
 const convertToBase2 = element => {
-  // Your code here
+    if (element[1] === 'x') {
+        let decimal = parseInt(element);
+        return `0b${decimal.toString(2)}`
+    }
+    else {
+        return `0b${element.toString(2)}`
+    }
 };
 
 /******************************************************************************/

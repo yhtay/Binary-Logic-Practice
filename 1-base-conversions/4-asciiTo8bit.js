@@ -5,9 +5,17 @@ const addZeros = require('../utils/addZeros');
 //    Read the export file for the explanation of how it works
 
 /******************************************************************************/
+//
 
 const asciiTo8bit = str => {
-  // Your code here
+
+	let result = [];
+	for (let i = 0; i < str.length; i++) {
+		let decimal = str.charCodeAt(i) // 49, 50, 51....
+		let binary = decimal.toString(2)
+		result.push(binary)
+	}
+	return result.join('');
 };
 
 /******************************************************************************/

@@ -3,7 +3,14 @@
 /******************************************************************************/
 
 const convertToBase10 = str => {
-  // Your code here
+// binary to decimal?
+    if (str[1] === "b") {
+        return parseInt(str.substring(2), 2);
+    }
+    if (str[1] === 'x') {
+        return parseInt(str);
+    }
+
 };
 
 /******************************************************************************/

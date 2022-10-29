@@ -2,8 +2,20 @@
 
 /******************************************************************************/
 
+/*
+If Binary:
+    1.convert to decimal
+    2.Convert to base-16(hex)
+*/
 const convertToBase16 = element => {
-  // Your code here
+
+    if (element[1] === 'b') {
+        let decimal = parseInt(element.substring(2), 2);
+        return `0x${decimal.toString(16)}`
+    }
+    else {
+        return `0x${element.toString(16)}`
+    }
 };
 
 /******************************************************************************/
